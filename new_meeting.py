@@ -5,7 +5,7 @@ from gspread_formatting import CellFormat, Color, format_cell_range
 def main():
     # Connect to the Google Sheet
     scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-    creds = Credentials.from_service_account_file("credentials.json", scopes=scopes)
+    creds = Credentials.from_service_account_file("creds/credentials.json", scopes=scopes)
     client = gspread.authorize(creds)
 
     workbook_id = "17Y8J7oHgFL8q6ZZaEJIXMuWzIuGZOTuBf6EFSR1Ipb4"
