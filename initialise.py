@@ -24,8 +24,8 @@ def main():
 
     # Auto complete new sheet with above variables
     sheet = workbook.worksheet("Meeting Minutes 1")
-    sheet.update('C3', [[project_name]])
-    sheet.update('C4', [[meeting_no]])
+    sheet.update(range_name='C3', values=[[project_name]])
+    sheet.update(range_name='C4', values=[[meeting_no]])
 
 if __name__ == "__main__":
     main()

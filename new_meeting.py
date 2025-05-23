@@ -28,8 +28,8 @@ def main():
 
     # Refresh sheet data input where required
     sheet = workbook.worksheet(f"Meeting Minutes {sheet_no}")
-    sheet.update('C3', [[project_name]])
-    sheet.update('C4', [[meeting_no]])
+    sheet.update(range_name='C3', values=[[project_name]])
+    sheet.update(range_name='C4', values=[[meeting_no]])
         
 def latest_sheet_details(workbook):
     # Calculate number of existing sheets
