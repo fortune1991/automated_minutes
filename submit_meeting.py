@@ -42,12 +42,12 @@ def main():
 
         # Refresh sheet data input where required
         sheet = workbook.worksheet(f"Meeting Minutes {sheet_no}")
-        sheet.update('C4', [[meeting_no]])
-        sheet.update('C5', [[""]])
-        sheet.update('C6', [[""]])
-        sheet.update('C7', [[""]])
+        sheet.update(range_name='C4', values=[[meeting_no]])
+        sheet.update(range_name='C5', values=[[""]])
+        sheet.update(range_name='C6', values=[[next_meeting]])
+        sheet.update(range_name='C7', values=[[""]])
         values = [['Empty']] * 50
-        sheet.update('B11:B60', values)
+        sheet.update(range_name='B11:B60', values=values)
 
         # Delete closed items
         delete_closed_items(sheet)
@@ -98,7 +98,7 @@ def delete_closed_items(sheet):
     
     # Write back only the rows to keep
     if rows_to_keep:
-        sheet.update(data_range, rows_to_keep)
+        sheet.update(range_name=data_range, values=rows_to_keep)
 
 if __name__ == "__main__":
     main()
